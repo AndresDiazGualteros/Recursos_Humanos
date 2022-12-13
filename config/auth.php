@@ -13,11 +13,14 @@ return [
     |
     */
 
-    'defaults' => [
+ /*    'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
+    ], */
+    'defaults' => [
+        'guard' => 'api',
+        'passwords' => 'users',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -35,13 +38,20 @@ return [
     |
     */
 
-    'guards' => [
+/*     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-    ],
+    ], */
 
+    'guards' => [
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers
